@@ -10,10 +10,10 @@
         <button (click)="next()">Next Page</button>
     </div>
 
-    <lessons-list [lessons] ="lessons$ | async"></lessons-list>
+    <lessons-list [lessons] ="lessons" (lesson)="navigateToLesson($event)"></lessons-list>
 
     <div class="tools-bar">
-        <button>
+        <button routerLink="new" [queryParams]="{courseId: (course$ | async)?.$key}">
             New Lesson
         </button>
     </div>

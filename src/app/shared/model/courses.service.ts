@@ -26,26 +26,7 @@ export class CoursesService {
         .map(results => results[0]);
   }
   
-/*
-  findCourseByUrl(courseUrl:string): Observable<Course>{
-    
-    console.log("courseUrl: ", courseUrl);
-    console.log(this.db.list('courses', {
-      query: {
-        orderByChild: 'url',
-        euqalTo: courseUrl
-      }
-    }).map(c => c[1]));
-    
-    return this.db.list('courses', {
-      query: {
-        orderByChild: 'url',
-        euqalTo: courseUrl
-      }
-    })
-    .map(results => results[0]);
-  }
-  */
+
   findLessonKeysPerCourseUrl(courseUrl:string, query: FirebaseListFactoryOpts={}): Observable<string[]>{
     return this.findCourseByUrl(courseUrl)
                .do(course => console.log("course", course))

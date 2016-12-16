@@ -18,7 +18,7 @@ export class Lesson{
     }
 
     static fromJsonList(array): Lesson[]{
-        return array.map(json => Lesson.fromJson(json));
+        return array.map(Lesson.fromJson);
     }
 
     static fromJson({$key, description, duration, url, tags, pro, longDescription, courseId}): Lesson{
